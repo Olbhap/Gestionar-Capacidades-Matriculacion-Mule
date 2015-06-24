@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph __version="3.5.0" author="pgc" created="Wed Jun 24 12:50:19 CEST 2015" description="XML To Xml&lt;wsasignummatriculados&gt;" guiVersion="3.4.4.P" id="1435160773901" licenseCode="Unlicensed" licenseType="Unknown" modified="Wed Jun 24 12:50:19 CEST 2015" modifiedBy="pgc" name="XML_To_Xml_wsasignummatriculados_" revision="1.0" showComponentDetails="false">
+<Global>
+<Metadata __index="0" __referenceCounter="1" __sourcePath="{}/wsasignummatriculados" _dataStructure="OBJECT" _id="__id" _type="Input" id="89d30584-fb01-43d7-a52d-a7eecee4423f">
+<Record fieldDelimiter="," name="wsasignummatriculados" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __cdata="false" __index="0" __sourcePath="{}/wsasignummatriculados/plengua" containerType="SINGLE" label="plengua" name="plengua" type="string"/>
+<Field __index="1" __sourcePath="{}/wsasignummatriculados/pcodusuario" containerType="SINGLE" label="pcodusuario" name="pcodusuario" type="string"/>
+<Field __index="2" __sourcePath="{}/wsasignummatriculados/pclave" containerType="SINGLE" label="pclave" name="pclave" type="string"/>
+<Field __index="3" __sourcePath="{}/wsasignummatriculados/pcurso" containerType="SINGLE" label="pcurso" name="pcurso" type="string"/>
+<Field __index="4" __sourcePath="{}/wsasignummatriculados/pcodasi" containerType="SINGLE" label="pcodasi" name="pcodasi" type="string"/>
+</Record>
+</Metadata>
+<Metadata __filteredMetadata="false" __index="0" __referenceCounter="1" __sourcePath="{http://UASI/WSS_GESTDOCENTE.wsdl=ns0}/ns0:wsasignummatriculados" _dataStructure="OBJECT" _id="__id" _type="Output" id="d7df3912-509c-4178-89c4-4df957c87c2d">
+<Record fieldDelimiter="," name="wsasignummatriculados" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="0" __sourcePath="{http://UASI/WSS_GESTDOCENTE.wsdl=ns0}/ns0:wsasignummatriculados/ns0:plengua" containerType="SINGLE" label="plengua" name="plengua" type="string"/>
+<Field __index="1" __sourcePath="{http://UASI/WSS_GESTDOCENTE.wsdl=ns0}/ns0:wsasignummatriculados/ns0:pcodusuario" containerType="SINGLE" label="pcodusuario" name="pcodusuario" type="string"/>
+<Field __index="2" __sourcePath="{http://UASI/WSS_GESTDOCENTE.wsdl=ns0}/ns0:wsasignummatriculados/ns0:pclave" containerType="SINGLE" label="pclave" name="pclave" type="string"/>
+<Field __index="3" __sourcePath="{http://UASI/WSS_GESTDOCENTE.wsdl=ns0}/ns0:wsasignummatriculados/ns0:pcurso" containerType="SINGLE" label="pcurso" name="pcurso" type="string"/>
+<Field __index="4" __sourcePath="{http://UASI/WSS_GESTDOCENTE.wsdl=ns0}/ns0:wsasignummatriculados/ns0:pcodasi" containerType="SINGLE" label="pcodasi" name="pcodasi" type="string"/>
+</Record>
+</Metadata>
+<Dictionary>
+<Entry id="DictionaryEntry0" input="true" name="inputPayload" output="false" type="object"/>
+<Entry id="DictionaryEntry1" input="false" name="outputPayload" output="true" type="object"/>
+</Dictionary>
+</Global>
+<Phase number="0">
+<Node cacheInMemory="true" charset="UTF-8" enabled="enabled" fileURL="dict:outputPayload" guiName="XML WRITER" guiX="900" guiY="20" id="EXT_XML_WRITER0" type="EXT_XML_WRITER">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<clover:element clover:name="ns0:wsasignummatriculados" xmlns:clover="http://www.cloveretl.com/ns/xmlmapping" xmlns:ns0="http://UASI/WSS_GESTDOCENTE.wsdl" clover:inPort="0">
+  <clover:element clover:name="ns0:plengua">$0.plengua</clover:element>
+  <clover:element clover:name="ns0:pcodusuario">$0.pcodusuario</clover:element>
+  <clover:element clover:name="ns0:pclave">$0.pclave</clover:element>
+  <clover:element clover:name="ns0:pcurso">$0.pcurso</clover:element>
+  <clover:element clover:name="ns0:pcodasi">$0.pcodasi</clover:element>
+</clover:element>]]></attr>
+<attr name="_data_format"><![CDATA[XML]]></attr>
+<attr name="__metadata"><![CDATA[true]]></attr>
+</Node>
+<Node enabled="enabled" guiName="Foreach 'wsasignummatriculados' -&gt; 'ns0:wsasignummatriculados'" guiX="460" guiY="20" id="FOREACH_WSASIGNUMMATRICULADOS_NS0_WSASIGNUMMATRICULADOS" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
+<attr name="melScript"><![CDATA[//MEL
+//START -> DO NOT REMOVE
+output.__id = input.__id;
+//END -> DO NOT REMOVE
+output.plengua = input.plengua;
+output.pcodusuario = input.pcodusuario;
+output.pclave = input.pclave;
+output.pcurso = input.pcurso;
+output.pcodasi = input.pcodasi;
+]]></attr>
+</Node>
+<Node charset="UTF-8" enabled="enabled" fileURL="dict:inputPayload" guiName="XML READER" guiX="20" guiY="20" id="XML_READER0" type="XML_READER">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context outPort="0" sequenceField="__id" xpath="/wsasignummatriculados">
+  <Mapping cloverField="plengua" trim="true" xpath="plengua"/>
+  <Mapping cloverField="pcodusuario" trim="true" xpath="pcodusuario"/>
+  <Mapping cloverField="pclave" trim="true" xpath="pclave"/>
+  <Mapping cloverField="pcurso" trim="true" xpath="pcurso"/>
+  <Mapping cloverField="pcodasi" trim="true" xpath="pcodasi"/>
+</Context>
+]]></attr>
+<attr name="_data_format"><![CDATA[XML]]></attr>
+</Node>
+<Edge debugMode="true" fromNode="FOREACH_WSASIGNUMMATRICULADOS_NS0_WSASIGNUMMATRICULADOS:0" guiBendpoints="" id="Edge1" inPort="Port 0 (in)" metadata="d7df3912-509c-4178-89c4-4df957c87c2d" outPort="Port 0 (out)" toNode="EXT_XML_WRITER0:0"/>
+<Edge debugMode="true" fromNode="XML_READER0:0" guiBendpoints="" id="Edge0" inPort="Port 0 (in)" metadata="89d30584-fb01-43d7-a52d-a7eecee4423f" outPort="Port 0 (out)" toNode="FOREACH_WSASIGNUMMATRICULADOS_NS0_WSASIGNUMMATRICULADOS:0"/>
+</Phase>
+</Graph>

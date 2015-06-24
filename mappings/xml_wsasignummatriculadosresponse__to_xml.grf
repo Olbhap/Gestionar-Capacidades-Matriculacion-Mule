@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph __version="3.5.0" author="pgc" created="Wed Jun 24 12:50:19 CEST 2015" description="Xml&lt;wsasignummatriculadosResponse&gt; To XML" guiVersion="3.4.4.P" id="1435160333009" licenseCode="Unlicensed" licenseType="Unknown" modified="Wed Jun 24 12:50:19 CEST 2015" modifiedBy="pgc" name="Xml_wsasignummatriculadosResponse__To_XML" revision="1.0" showComponentDetails="false">
+<Global>
+<Metadata __index="0" __referenceCounter="1" __schemaType="{http://UASI/WSS_GESTDOCENTE.wsdl}ClaseAsigNumMatricul" __sourcePath="{http://UASI/WSS_GESTDOCENTE.wsdl=ns0}/ns0:wsasignummatriculadosResponse/ns0:wsasignummatriculadosResult/ns0:ClaseAsigNumMatricul" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="7ab1e229-3d9c-46d8-b61e-499e28d736ee" _parent_id="__parent_id" _type="Input" id="c7ff6ea4-5f83-4dec-8a19-4a16e2f9d572">
+<Record fieldDelimiter="," name="ClaseAsigNumMatricul" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="0" __schemaType="{http://UASI/WSS_GESTDOCENTE.wsdl}ClaseAsigNumMatricul" __sourcePath="{http://UASI/WSS_GESTDOCENTE.wsdl=ns0}/ns0:wsasignummatriculadosResponse/ns0:wsasignummatriculadosResult/ns0:ClaseAsigNumMatricul/ns0:matriculados" containerType="SINGLE" label="matriculados" name="matriculados" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="0" __referenceCounter="1" __sourcePath="{}/wsasignummatriculadosResponse/wsasignummatriculadosResult/ClaseAsigNumMatricul" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="e2874eda-cf23-40c1-b354-4df11e84ee85" _parent_id="__parent_id" _type="Output" id="5f738d9c-c14c-4f56-b368-a164e4ffeabc">
+<Record fieldDelimiter="," name="ClaseAsigNumMatricul" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="0" __sourcePath="{}/wsasignummatriculadosResponse/wsasignummatriculadosResult/ClaseAsigNumMatricul/matriculados" containerType="SINGLE" label="matriculados" name="matriculados" type="string"/>
+</Record>
+</Metadata>
+<Metadata __filteredMetadata="false" __index="0" __referenceCounter="1" __sourcePath="{http://UASI/WSS_GESTDOCENTE.wsdl=ns0}/ns0:wsasignummatriculadosResponse" _dataStructure="OBJECT" _id="__id" _type="Input" id="7ab1e229-3d9c-46d8-b61e-499e28d736ee">
+<Record fieldDelimiter="," name="wsasignummatriculadosResponse" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="0" __referenceCounter="1" __sourcePath="{}/wsasignummatriculadosResponse" _dataStructure="OBJECT" _id="__id" _type="Output" id="e2874eda-cf23-40c1-b354-4df11e84ee85">
+<Record fieldDelimiter="," name="wsasignummatriculadosResponse" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+</Record>
+</Metadata>
+<Dictionary>
+<Entry id="DictionaryEntry0" input="true" name="inputPayload" output="false" type="object"/>
+<Entry id="DictionaryEntry1" input="false" name="outputPayload" output="true" type="object"/>
+</Dictionary>
+</Global>
+<Phase number="0">
+<Node cacheInMemory="true" charset="UTF-8" enabled="enabled" fileURL="dict:outputPayload" guiName="XML WRITER" guiX="900" guiY="20" id="EXT_XML_WRITER0" type="EXT_XML_WRITER">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<wsasignummatriculadosResponse xmlns:clover="http://www.cloveretl.com/ns/xmlmapping" clover:inPort="0">
+  <wsasignummatriculadosResult>
+    <ClaseAsigNumMatricul clover:inPort="1" clover:key="__parent_id" clover:parentKey="__id">
+      <matriculados>$1.matriculados</matriculados>
+    </ClaseAsigNumMatricul>
+  </wsasignummatriculadosResult>
+</wsasignummatriculadosResponse>]]></attr>
+<attr name="_data_format"><![CDATA[XML]]></attr>
+</Node>
+<Node enabled="enabled" guiName="Foreach 'ns0:ClaseAsigNumMatricul' -&gt; 'ClaseAsigNumMatricul'" guiX="460" guiY="120" id="FOREACH_NS0_CLASE_ASIG_NUM_MATRICUL_CLASE_ASIG_NUM_MATRICUL" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
+<attr name="melScript"><![CDATA[//MEL
+//START -> DO NOT REMOVE
+output.__id = input.__id;
+output.__parent_id = input.__parent_id;
+//END -> DO NOT REMOVE
+output.matriculados = input.matriculados;
+]]></attr>
+</Node>
+<Node enabled="enabled" guiName="Foreach 'ns0:wsasignummatriculadosResponse' -&gt; 'wsasignummatriculadosResponse'" guiX="460" guiY="20" id="FOREACH_NS0_WSASIGNUMMATRICULADOS_RESPONSE_WSASIGNUMMATRICULADOS_RESPONSE" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
+<attr name="melScript"><![CDATA[//MEL
+//START -> DO NOT REMOVE
+output.__id = input.__id;
+//END -> DO NOT REMOVE
+]]></attr>
+</Node>
+<Node charset="UTF-8" enabled="enabled" fileURL="dict:inputPayload" guiName="XML READER" guiX="20" guiY="20" id="XML_READER0" type="XML_READER">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context namespacePaths="ns0=&quot;http://UASI/WSS_GESTDOCENTE.wsdl&quot;" outPort="0" sequenceField="__id" xpath="/ns0:wsasignummatriculadosResponse">
+  <Context generatedKey="__parent_id" namespacePaths="ns0=&quot;http://UASI/WSS_GESTDOCENTE.wsdl&quot;" outPort="1" parentKey="__id" sequenceField="__id" xpath="ns0:wsasignummatriculadosResult/ns0:ClaseAsigNumMatricul">
+    <Mapping cloverField="matriculados" namespacePaths="ns0=&quot;http://UASI/WSS_GESTDOCENTE.wsdl&quot;" trim="true" xpath="ns0:matriculados"/>
+  </Context>
+</Context>
+]]></attr>
+<attr name="_data_format"><![CDATA[XML]]></attr>
+<attr name="__metadata"><![CDATA[true]]></attr>
+</Node>
+<Edge debugMode="true" fromNode="FOREACH_NS0_CLASE_ASIG_NUM_MATRICUL_CLASE_ASIG_NUM_MATRICUL:0" guiBendpoints="" id="Edge3" inPort="Port 1 (in)" metadata="5f738d9c-c14c-4f56-b368-a164e4ffeabc" outPort="Port 0 (out)" toNode="EXT_XML_WRITER0:1"/>
+<Edge debugMode="true" fromNode="FOREACH_NS0_WSASIGNUMMATRICULADOS_RESPONSE_WSASIGNUMMATRICULADOS_RESPONSE:0" guiBendpoints="" id="Edge1" inPort="Port 0 (in)" metadata="e2874eda-cf23-40c1-b354-4df11e84ee85" outPort="Port 0 (out)" toNode="EXT_XML_WRITER0:0"/>
+<Edge debugMode="true" fromNode="XML_READER0:0" guiBendpoints="" id="Edge0" inPort="Port 0 (in)" metadata="7ab1e229-3d9c-46d8-b61e-499e28d736ee" outPort="Port 0 (out)" toNode="FOREACH_NS0_WSASIGNUMMATRICULADOS_RESPONSE_WSASIGNUMMATRICULADOS_RESPONSE:0"/>
+<Edge debugMode="true" fromNode="XML_READER0:1" guiBendpoints="" id="Edge2" inPort="Port 0 (in)" metadata="c7ff6ea4-5f83-4dec-8a19-4a16e2f9d572" outPort="Port 1 (out)" toNode="FOREACH_NS0_CLASE_ASIG_NUM_MATRICUL_CLASE_ASIG_NUM_MATRICUL:0"/>
+</Phase>
+</Graph>

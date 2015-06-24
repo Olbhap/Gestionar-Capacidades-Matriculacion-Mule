@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/was" xmlns:tns="http://www.example.org/was" elementFormDefault="qualified">
+ <wss:wsdatosgrpasig>
+         <!--Optional:-->
+         <wss:plengua>C</wss:plengua>
+         <!--Optional:-->
+         <wss:pcodusuario>1000</wss:pcodusuario>
+         <!--Optional:-->
+         <wss:pclave>0000</wss:pclave>
+         <!--Optional:-->
+         <wss:pcurso>2014-15</wss:pcurso>
+         <!--Optional:-->
+         <wss:pcodplan>C201</wss:pcodplan>
+      </wss:wsdatosgrpasig>
+</schema>

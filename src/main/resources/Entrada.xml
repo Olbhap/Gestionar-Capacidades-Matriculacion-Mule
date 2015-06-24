@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wss:wsdatosgrpasig>
+         <!--Optional:-->
+         <wss:plengua>C</wss:plengua>
+         <!--Optional:-->
+         <wss:pcodusuario>1000</wss:pcodusuario>
+         <!--Optional:-->
+         <wss:pclave>0000</wss:pclave>
+         <!--Optional:-->
+         <wss:pcurso>2014-15</wss:pcurso>
+         <!--Optional:-->
+         <wss:pcodplan>C201</wss:pcodplan>
+      </wss:wsdatosgrpasig>
